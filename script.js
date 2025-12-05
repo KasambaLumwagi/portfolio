@@ -28,91 +28,25 @@ tl.from('.logo', {
     duration: 1,
     ease: 'power3.out'
 })
-.from('.nav-links li', {
-    y: -20,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: 'power3.out'
-}, '-=0.5')
-.from('.greeting', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-}, '-=0.5')
-.from('.glitch', {
-    y: 20,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
-}, '-=0.6')
-.from('.subtitle', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-}, '-=0.6')
-.from('.tagline', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-}, '-=0.6')
-.from('.cta-buttons a', {
-    y: 20,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power3.out'
-}, '-=0.6')
-.from('.scroll-indicator', {
-    y: 20,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out'
-}, '-=0.4');
-
-// Scroll Animations for Sections
-const sections = document.querySelectorAll('.section');
-
-sections.forEach(section => {
-    gsap.from(section.children, {
-        scrollTrigger: {
-            trigger: section,
-            start: 'top 80%',
-            end: 'top 20%',
-            toggleActions: 'play none none reverse'
-        },
-        y: 50,
+    .from('.nav-links li', {
+        y: -20,
         opacity: 0,
-        duration: 1,
-        stagger: 0.2,
+        duration: 0.8,
+        stagger: 0.1,
         ease: 'power3.out'
-    });
-});
-
-// Skill Bars Animation (if we had bars, but we have items, let's animate items)
-gsap.utils.toArray('.skill-category').forEach(category => {
-    gsap.from(category.querySelectorAll('.skill-item'), {
-        scrollTrigger: {
-            trigger: category,
-            start: 'top 85%',
-        },
+    }, '-=0.5')
+    .from('.greeting', {
         y: 20,
         opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
-    });
-});
-
-// Hero Background Animation (Simple Data Particles)
-const heroVisual = document.querySelector('.data-sphere');
-
-// Create a canvas for the effect
-const canvas = document.createElement('canvas');
-const ctx = canvas.getContext('2d');
+        duration: 0.8,
+        ease: 'power3.out'
+    }, '-=0.5')
+    .from('.glitch', {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    }, '-=0.6')
 heroVisual.appendChild(canvas);
 
 let width, height;
@@ -179,12 +113,12 @@ function connect() {
 
 function animate() {
     ctx.clearRect(0, 0, width, height);
-    
+
     particles.forEach(p => {
         p.update();
         p.draw();
     });
-    
+
     connect();
     requestAnimationFrame(animate);
 }
