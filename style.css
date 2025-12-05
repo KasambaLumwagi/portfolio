@@ -113,13 +113,13 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
     position: relative;
-    overflow: hidden;
 }
 
 .hero-content {
@@ -688,4 +688,3 @@ footer i {
         left: 0;
     }
 }
-.skill-item { color: #fff !important; }
